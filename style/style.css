@@ -1,0 +1,302 @@
+*{
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+}
+
+html{
+  --background: #E5E5E5;
+  --dark-blue-100: #609ED4;
+  --dark-blue-200: #356EA9;
+  --dark-blue-300: #0A3871;
+  --dark-blue-400: #072B61;
+  --dark-blue-500: #052051;
+
+  --light-blue-100: #F3F5FC;
+  --light-blue-200: #EFF1FA;
+  --light-blue-300: #E9ECF8;
+  --light-blue-400: #AAB2D5;
+  --light-blue-500: #757FB2;
+
+  --grey-100: #CED4DA;
+  --grey-200: #ADB5BD;
+  --grey-300:#868E96;
+  --grey-400: #495057;
+  --grey-500: #343A40;
+
+  /* 1rem = 16px (User Agent) = 100% (User Agent) */
+  font-size: 62.5% /* 10px */
+}
+
+body{
+  height: 100vh;
+
+  background: var(--background);
+
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 10% 85% 5%;
+  grid-template-areas: "h a" "m a" "f f";
+}
+
+header{
+  grid-area: h;
+}
+
+header a img{
+  padding-left: 5rem;
+  padding-top: 2rem;
+}
+
+main{
+  grid-area: m;
+
+  padding-top: 2rem;
+  padding-left: 5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+main textarea {
+  width: 80%;
+  height: 70%; 
+  padding: 2rem;
+
+  color: var(--dark-blue-300);
+  font-size: 3.2rem;
+
+  resize: none;
+
+  border: 0;
+  background-color: var(--background);
+}
+
+textarea::placeholder{
+  color: var(--dark-blue-300);
+}
+
+textarea:focus{
+  outline: none;
+}
+
+.notice-message{
+  width: 80%; padding-left: 2rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+
+  color: var(--grey-400);
+}
+
+aside{
+  grid-area: a;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.no-message{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  height: 90%;
+  width: 80%;
+  
+  border-radius: 2rem;
+
+  background-color: #FFFFFF;
+}
+
+.no-message p.first-msg{
+  font-weight: 700;
+  font-size: 2.4rem;
+  text-align: center;
+
+  color: var(--grey-500);
+  line-height: 2.88rem;
+
+  margin-bottom: 1rem;
+}
+.no-message p.second-msg{
+  font-weight: 400;
+  font-size: 1.6rem;
+  text-align: center;
+
+  color: var(--grey-400);
+  line-height: 2.4rem;
+}
+
+.none{
+  display: none;
+}
+
+.aside{
+  height: 90%;
+  width: 80%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+
+  border-radius: 2rem;
+  overflow: hidden;
+  padding-bottom: 2rem;
+
+  background-color: #FFFFFF;
+}
+
+#aside-result textarea{
+  width: 100%;
+  height: 100%;
+
+  padding: 1.2rem 2rem;
+
+  font-weight: 400;
+  font-size: 2.4rem;
+  color: var(--grey-400);
+  line-height: 3.6rem;
+
+  background-color: #ffffff;
+
+  border: 0;
+
+  resize: none;
+}
+
+button{
+  width: 32.8rem;
+  height: 6.7rem;
+  padding: 2.4rem;
+
+  border-radius: 2.4rem;
+  border: 1px solid var(--dark-blue-300);
+
+  cursor: pointer;
+}
+
+button.btn-encrypt{
+  background-color: var(--dark-blue-300);
+  color: #D8DFE8;
+
+  transition: 0.3s;
+}
+button.btn-decrypt{
+  background-color: #D8DFE8;
+  color: var(--dark-blue-300);
+
+  transition: 0.3s;
+}
+
+button.btn-encrypt:hover {
+  background-color: var(--dark-blue-500);
+}
+
+button.btn-decrypt:hover {
+  background-color: var(--grey-200);
+}
+
+.main-buttons{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2rem;
+}
+
+#aside-result button img {
+  width: 1.5rem;
+  margin-right: 0.6rem;
+}
+
+#aside-result button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 85%;
+  transition: 0.3s;
+}
+
+#aside-result button:active{
+  background-color: #57d857;
+}
+
+footer{
+  grid-area: f;
+
+  color: #CED4DA;
+  background-color: var(--dark-blue-300);
+
+  font-size: 1.2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.invalid-message-image{
+  content: url("../assets/warningRed.svg");
+  width: 2rem;
+}
+
+.invalid-message-text{
+  font-size: 0;
+}
+
+.invalid-message-text::after{
+  color: #FF0000;
+  content:'Caracteres especiais, acentos e números não são aceitos';
+  font-size: 2rem;
+  vertical-align: middle;
+}
+
+.invalid-message-textarea{
+  box-shadow: inset 0 0 8px #FF0000;
+}
+
+@media (max-width: 1299px) {
+  body{
+    display: grid;
+    grid-template-rows: 10% 50% 30% 10%;
+    grid-template-areas: "h h" "m m" "a a" "f f";
+  }
+
+  .no-message {
+    width: 90%;
+    height: 70%;
+  }
+
+  .aside {
+    width: 90%;
+    height: 90%;
+  }
+
+  .no-message img{
+    display: none;
+  }
+
+  .notice-message {
+    margin-bottom: 1.5rem;
+  }
+
+  
+
+  /* afastar o main do aside */
+
+}

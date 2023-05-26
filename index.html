@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="shortcut icon" href="./assets/fav.ico" type="image/x-icon">
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Decodificador</title>
+
+  <link rel="stylesheet" href="./style/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <a href="./index.html">
+      <img src="./assets/aluraLogo.svg" alt="Alura logo">
+    </a>
+  </header>
+
+  <main>
+    <textarea id="main-textarea" placeholder="Digite seu texto..."></textarea>
+
+    <div class="notice-message">
+      <img src="./assets/warning.svg" alt="Imagem de aviso">
+      <p>Apenas letras minusculas e sem acento</p>
+    </div>
+
+    <div class="main-buttons">
+      <button class="btn-encrypt">Criptografar</button>  
+      <button class="btn-decrypt">Descriptografar</button>
+    </div>
+  </main>
+  
+  <aside>
+    <div class="none" id="aside-result">
+      <textarea id="encrypted-textarea" readonly></textarea>
+      <button class="btn-copy"><img src="./assets/copy-icon.svg" alt="copy icon"> Copiar</button>
+    </div>
+
+   <div class="no-message" id="aside-no-message">
+      <img src="./assets/noMessageImg.svg" alt="Sem mensagens">
+      <p class="first-msg">Nenhuma mensagem encontrada</p>
+      <p class="second-msg">Digite um texto que você deseja criptografar ou descriptografar</p>
+   </div>
+  </aside>
+
+  <footer>
+    Desenvolvido por Bruno Bispo 🚀
+  </footer>
+</body>
+
+<script src="./index.js"></script>
+</html>
